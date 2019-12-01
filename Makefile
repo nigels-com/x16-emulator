@@ -10,7 +10,9 @@ else
 	SDL2CONFIG=sdl2-config
 endif
 
-CFLAGS=-std=c99 -O3 -Wall -Werror -g $(shell $(SDL2CONFIG) --cflags) -Iextern/include -Iextern/src
+CFLAGS=-std=c99 -Wall -Werror $(shell $(SDL2CONFIG) --cflags) -Iextern/include -Iextern/src
+CFLAGS += -O3
+#CFLAGS += -g
 LDFLAGS=$(shell $(SDL2CONFIG) --libs) -lm
 
 OUTPUT=x16emu
